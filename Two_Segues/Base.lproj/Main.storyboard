@@ -25,7 +25,7 @@
                                 <state key="normal" title="Send Message to Second View"/>
                                 <connections>
                                     <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yPx-AK-HVe"/>
-                                    <segue destination="gZu-6b-4er" kind="show" id="DJp-ll-JmB"/>
+                                    <segue destination="gZu-6b-4er" kind="show" identifier="sendDataFrw" id="DJp-ll-JmB"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQk-Kw-ykj">

@@ -9,13 +9,20 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-    @IBOutlet weak var label: UILabel!
+//    data coming from first controller
+    var data = ""
     
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //Showing data from first controller
+        label.text = data
     }
     
 

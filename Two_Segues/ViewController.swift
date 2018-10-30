@@ -21,7 +21,20 @@ class ViewController: UIViewController {
 
     
     @IBAction func sendButtonPressed(_ sender: Any) {
+//        Invoking Segue to send data when button is pressed
+        performSegue(withIdentifier: "sendDataFrw", sender: self)
+        
     }
-    
+    //Function to prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendDataFrw" {
+            //Sending it to it's destination, which is second view controller
+            let secondVC = segue.destination as! SecondViewController
+//            Sending data to second view controller
+            secondVC.data = textField.text!
+            
+            
+        }
+    }
 }
 
