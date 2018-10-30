@@ -8,8 +8,19 @@
 
 import UIKit
 
+//Step One: Defining a protocol, it's as same level as class
+
+protocol canReceive {
+    //Defining a function in protocoal that our first view controller need to "confrom" to.
+    //    This doesn't have any body, it's body will be in first view controller. That's conforming (I guess) #setting the rule
+    func dataReceived(data: String)
+}
+
 class SecondViewController: UIViewController {
-//    data coming from first controller
+
+//    Step Four: Define delegate variable. Delegate will send the data to first view controller, Data type of the delegate will be protocol, i.e canReceive? (Optional)
+    var delegate : canReceive?
+    
     var data = ""
     
     @IBOutlet weak var label: UILabel!
@@ -37,6 +48,9 @@ class SecondViewController: UIViewController {
     */
 
     @IBAction func sendDataBack(_ sender: Any) {
-        
+        //Step Five: Sending the data back when button is pressed
+        delegate?.dataReceived(data: textField.text!)
+        //        Step Seven: Dismiss the current view to go back to first view
+        dismiss(animated: true, completion: nil)
     }
 }

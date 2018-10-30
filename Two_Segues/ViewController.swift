@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+// Step 2: Conforming to the protocol. i.e adding the protocal next to class. (It will give an error because we haven't wrote that method yet)
+class ViewController: UIViewController, canReceive {
 
     @IBOutlet weak var label: UILabel!
     
@@ -32,10 +32,18 @@ class ViewController: UIViewController {
             let secondVC = segue.destination as! SecondViewController
 //            Sending data to second view controller
             secondVC.data = textField.text!
+            
+            //            Step Six: Setting ouerself(This object) as delegate to recive the data
+            secondVC.delegate = self
         }
     }
     @IBAction func blueButtonPressed(_ sender: Any) {
         view.backgroundColor = UIColor.blue
+    }
+    //    Step 3: writing the body of dataReceived function, which in insid over protocol
+    
+    func dataReceived(data: String) {
+        label.text = data
     }
 }
 
