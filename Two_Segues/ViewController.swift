@@ -32,9 +32,10 @@ class ViewController: UIViewController {
             let secondVC = segue.destination as! SecondViewController
 //            Sending data to second view controller
             secondVC.data = textField.text!
-            
-            
         }
+    }
+    @IBAction func blueButtonPressed(_ sender: Any) {
+        view.backgroundColor = UIColor.blue
     }
 }
 
